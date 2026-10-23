@@ -57,9 +57,6 @@ export const Footer: React.FC = () => {
         <p>
           &copy; {currentYear} {businessConfig.name}. All rights reserved.
         </p>
-        <span className={styles.phaseNote}>
-          Phase 0: Project Foundation (Placeholders pending confirmation)
-        </span>
       </div>
     </footer>
   );

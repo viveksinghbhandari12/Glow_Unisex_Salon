@@ -1,9 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
+
+export const viewport: Viewport = {
+  themeColor: "#FFFBF5",
+  width: "device-width",
+  initialScale: 1,
+};
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
