@@ -142,6 +142,7 @@ export default function HomePage() {
 
               {/* Dual Action CTAs */}
               <div
+                className="hero-cta-group"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -198,6 +199,7 @@ export default function HomePage() {
 
               {/* Metrics Strip */}
               <div
+                className="hero-metrics-strip"
                 style={{
                   display: "flex",
                   alignItems: "center",

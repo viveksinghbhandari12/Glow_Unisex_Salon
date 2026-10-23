@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { businessConfig } from "@/data/business";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -249,6 +249,7 @@ export default function HairPage() {
               </p>
 
               <div
+                className="hero-cta-group"
                 style={{
                   display: "flex",
                   alignItems: "center",

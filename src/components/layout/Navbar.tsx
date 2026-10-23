@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, MessageCircle, MapPin } from "lucide-react";
+import { Menu, X, MessageCircle, MapPin, Phone } from "lucide-react";
 import { businessConfig, navRoutes } from "@/data/business";
 import { Button } from "@/components/ui/Button";
 import styles from "./Navbar.module.css";
@@ -82,35 +82,82 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown / Luxury App-Like Drawer */}
       {isOpen && (
-        <nav className={styles.mobileMenu} aria-label="Mobile Navigation">
-          {navRoutes.map((route) => {
-            const isActive = pathname === route.href;
-            return (
-              <Link
-                key={route.href}
-                href={route.href}
-                onClick={closeMenu}
-                className={`${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ""}`}
-                aria-current={isActive ? "page" : undefined}
-              >
-                {route.label}
-              </Link>
-            );
-          })}
-          <a
-            href={businessConfig.googleMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={closeMenu}
-            className={styles.mobileNavLink}
-            style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--color-terracotta)", fontWeight: 600 }}
+        <div className={styles.mobileDrawerBackdrop} onClick={closeMenu}>
+          <nav
+            className={styles.mobileMenu}
+            aria-label="Mobile Navigation"
+            onClick={(e) => e.stopPropagation()}
           >
-            <MapPin size={16} />
-            <span>Open in Google Maps ↗</span>
-          </a>
-        </nav>
+            {/* 1. Salon Operating Status Header */}
+            <div className={styles.mobileStatusStrip}>
+              <span className={styles.statusDot} />
+              <span>OPEN DAILY: {businessConfig.openingHours.display} • {businessConfig.address.locality}</span>
+            </div>
+
+            {/* 2. Primary Navigation Links with Numbers & Chevrons */}
+            <div className={styles.mobileNavLinksList}>
+              {navRoutes.map((route, idx) => {
+                const isActive = pathname === route.href;
+                const indexFormatted = `0${idx + 1}`;
+                return (
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    onClick={closeMenu}
+                    className={`${styles.mobileNavLink} ${
+                      isActive ? styles.mobileNavLinkActive : ""
+                    }`}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    <div className={styles.mobileNavLeft}>
+                      <span className={styles.mobileNavIdx}>{indexFormatted}</span>
+                      <span className={styles.mobileNavTitle}>{route.label}</span>
+                    </div>
+                    <span className={styles.mobileNavArrow}>→</span>
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* 3. Direct Mobile Booking Action Tiles */}
+            <div className={styles.mobileDrawerActions}>
+              <a
+                href={businessConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className={styles.drawerWhatsappBtn}
+              >
+                <MessageCircle size={18} />
+                <span>WhatsApp Concierge</span>
+              </a>
+
+              <div className={styles.drawerSecondaryRow}>
+                <a
+                  href={businessConfig.phoneCallHref}
+                  onClick={closeMenu}
+                  className={styles.drawerCallBtn}
+                >
+                  <Phone size={16} />
+                  <span>Call Reception</span>
+                </a>
+
+                <a
+                  href={businessConfig.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className={styles.drawerMapBtn}
+                >
+                  <MapPin size={16} />
+                  <span>Google Maps</span>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
       )}
     </header>
   );

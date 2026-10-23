@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Glow Unisex Salon — Chocolate & Sand Luxury Editorial Theme
  * Sourced directly from Swatch:
  * - Chocolate: #3E000C
@@ -228,4 +228,93 @@ img, svg {
   color: rgba(62, 0, 12, 0.25);
   display: block;
   margin-bottom: -1rem;
+}
+
+/* ==========================================================================
+   Mobile-Specific Distinct UI Rules & Safe-Area Polishing (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Prevent content overlap with floating MobileBottomBar */
+  .main-content {
+    padding-bottom: 76px;
+  }
+
+  /* Refined mobile screen padding */
+  .container {
+    padding-inline: 1.15rem;
+  }
+
+  /* Compact section vertical rhythm for smooth thumb-scrolling */
+  section {
+    padding-block: clamp(3.25rem, 8vw, 4.5rem) !important;
+  }
+
+  /* Centered and scaled editorial arch frames for mobile viewports */
+  .arch-frame {
+    max-width: 280px !important;
+    margin-inline: auto;
+  }
+
+  /* Full-width touch-friendly CTA buttons in heroes on mobile */
+  .hero-cta-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    margin-bottom: 2.25rem !important;
+  }
+
+  .hero-cta-group > a,
+  .hero-cta-group > button {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    text-align: center;
+  }
+
+  /* Mobile-tuned Metrics Strip */
+  .hero-metrics-strip {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.75rem !important;
+    text-align: center;
+    padding-top: 1.5rem !important;
+  }
+
+  .hero-metrics-strip > div:nth-child(2),
+  .hero-metrics-strip > div:nth-child(4) {
+    display: none !important; /* Hide thin vertical dividers in 3-col grid */
+  }
+
+  .hero-metrics-strip div div:first-child {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-metrics-strip div div:last-child {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Touch-friendly interactive elements */
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 15px; /* Slight scale down for compact mobile screens */
+  }
+
+  .container {
+    padding-inline: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8.5vw, 2.6rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 6.8vw, 2.15rem) !important;
+  }
 }

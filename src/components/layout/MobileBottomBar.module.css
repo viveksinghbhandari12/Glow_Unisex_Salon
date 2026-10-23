@@ -1,0 +1,114 @@
+.bottomBar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bottomBar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: rgba(37, 0, 7, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 236, 209, 0.22);
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.45);
+    padding-top: 0.55rem;
+    padding-bottom: max(0.55rem, env(safe-area-inset-bottom, 0.55rem));
+    padding-inline: 0.85rem;
+    animation: barSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes barSlideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .actionBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    flex: 1;
+    min-height: 48px;
+    padding: 0.3rem 0.5rem;
+    color: #FFECD1;
+    text-decoration: none;
+    border-radius: 12px;
+    background: rgba(255, 236, 209, 0.08);
+    border: 1px solid rgba(255, 236, 209, 0.16);
+    transition: all 0.2s ease;
+  }
+
+  .actionBtn:active {
+    background: rgba(255, 236, 209, 0.2);
+    transform: scale(0.96);
+  }
+
+  .iconCircle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFECD1;
+  }
+
+  .btnLabel {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #FFECD1;
+  }
+
+  /* Spotlight Center WhatsApp Booking Button */
+  .whatsappBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex: 2.2;
+    min-height: 48px;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .whatsappBtn:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+  }
+
+  .whatsappLabel {
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 380px) {
+  .whatsappLabel {
+    font-size: 0.85rem;
+  }
+}

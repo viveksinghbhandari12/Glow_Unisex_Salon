@@ -166,25 +166,172 @@
     display: inline-flex;
   }
 
+  .mobileDrawerBackdrop {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(37, 0, 7, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 100;
+    animation: fadeIn 0.25s ease both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
   .mobileMenu {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    padding: 1.25rem 1.5rem 1.75rem;
-    background-color: var(--color-cream-base);
-    border-bottom: 1px solid var(--border-subtle);
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
+    background-color: #FFFDF9;
+    border-bottom: 2px solid rgba(62, 0, 12, 0.15);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    animation: drawerSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes drawerSlideDown {
+    from {
+      transform: translateY(-16px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* 1. Operating Status Strip */
+  .mobileStatusStrip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    background-color: #FFECD1;
+    border-bottom: 1px solid rgba(62, 0, 12, 0.1);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3E000C;
+  }
+
+  .statusDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #25D366;
+    box-shadow: 0 0 6px #25D366;
+  }
+
+  /* 2. Routes List */
+  .mobileNavLinksList {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
   }
 
   .mobileNavLink {
-    padding: 0.65rem 0;
-    font-size: 1rem;
-    color: var(--color-taupe-muted);
-    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.35rem;
+    border-bottom: 1px solid rgba(62, 0, 12, 0.06);
+    text-decoration: none;
+    transition: background-color 0.15s ease;
   }
 
-  .mobileNavLink:hover,
+  .mobileNavLink:active,
   .mobileNavLinkActive {
-    color: var(--color-espresso-dark);
+    background-color: #FFF4E6;
+  }
+
+  .mobileNavLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .mobileNavIdx {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgba(62, 0, 12, 0.4);
+    width: 22px;
+  }
+
+  .mobileNavLinkActive .mobileNavIdx {
+    color: #3E000C;
+  }
+
+  .mobileNavTitle {
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
     font-weight: 600;
+    color: #3E000C;
+  }
+
+  .mobileNavArrow {
+    font-size: 1rem;
+    color: rgba(62, 0, 12, 0.35);
+    transition: transform 0.2s ease;
+  }
+
+  .mobileNavLinkActive .mobileNavArrow {
+    color: #3E000C;
+    transform: translateX(3px);
+  }
+
+  /* 3. Action Tiles at bottom of drawer */
+  .mobileDrawerActions {
+    padding: 1rem 1.25rem 1.35rem;
+    background-color: #FFF7EC;
+    border-top: 1px solid rgba(62, 0, 12, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .drawerWhatsappBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  }
+
+  .drawerSecondaryRow {
+    display: flex;
+    gap: 0.65rem;
+  }
+
+  .drawerCallBtn,
+  .drawerMapBtn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.7rem;
+    background-color: #FFFFFF;
+    color: #3E000C;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    border: 1px solid rgba(62, 0, 12, 0.15);
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   }
 }
