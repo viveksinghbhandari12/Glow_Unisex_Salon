@@ -66,8 +66,11 @@ export const Navbar: React.FC = () => {
             variant="primary"
             size="sm"
             icon={<MessageCircle size={16} />}
+            className={styles.headerWhatsappBtn}
+            aria-label="Chat with Glow Unisex Salon on WhatsApp"
+            title="Chat on WhatsApp"
           >
-            WhatsApp
+            <span className={styles.headerWhatsappText}>WhatsApp</span>
           </Button>
 
           <button

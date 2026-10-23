@@ -124,16 +124,149 @@
   transform: translateY(-1px);
 }
 
-.mapBtnText {
+.headerWhatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.headerWhatsappText {
   display: inline;
 }
 
-@media (max-width: 480px) {
-  .mapBtnText {
-    display: none;
+@media (max-width: 768px) {
+  .navContainer {
+    height: 64px;
+    gap: 0.5rem;
+    padding-inline: 0.85rem;
   }
+
+  .brand {
+    gap: 0.55rem;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  .logoBadge {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .brandText {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .brandName {
+    font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.15;
+  }
+
+  .brandSub {
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+
+  .actions {
+    flex-shrink: 0;
+    gap: 0.4rem;
+  }
+
+  /* Hide extra header Map button on mobile since it's already in MobileBottomBar and drawer */
   .mapBtn {
-    padding: 0.45rem 0.65rem;
+    display: none !important;
+  }
+
+  .headerWhatsappBtn {
+    padding: 0.42rem 0.75rem !important;
+    font-size: 0.82rem !important;
+    min-height: 38px !important;
+  }
+
+  .mobileMenuBtn {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  .mobileDrawerBackdrop {
+    top: 64px !important;
+  }
+
+  .mobileMenu {
+    max-height: calc(100vh - 64px) !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .headerWhatsappBtn {
+    padding: 0 !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    min-width: 38px !important;
+    border-radius: var(--radius-sm) !important;
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+
+  .headerWhatsappBtn > span:last-child {
+    display: none !important;
+  }
+
+  .headerWhatsappText {
+    display: none !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .navContainer {
+    padding-inline: 0.55rem;
+    gap: 0.35rem;
+  }
+
+  .brand {
+    gap: 0.4rem;
+  }
+
+  .logoBadge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.82rem;
+  }
+
+  .brandName {
+    font-size: 0.88rem;
+  }
+
+  .brandSub {
+    display: none; /* Hide subtitle on ultra-narrow screens so brand name has 100% room */
+  }
+
+  .headerWhatsappBtn {
+    width: 34px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    min-width: 34px !important;
+  }
+
+  .mobileMenuBtn {
+    width: 34px;
+    height: 34px;
   }
 }
 
@@ -155,6 +288,22 @@
 
 .mobileMenu {
   display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes drawerSlideDown {
+  from {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 900px) {
@@ -179,11 +328,6 @@
     animation: fadeIn 0.25s ease both;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
   .mobileMenu {
     display: flex;
     flex-direction: column;
@@ -193,17 +337,6 @@
     border-bottom: 2px solid rgba(62, 0, 12, 0.15);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
     animation: drawerSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  @keyframes drawerSlideDown {
-    from {
-      transform: translateY(-16px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
   }
 
   /* 1. Operating Status Strip */
