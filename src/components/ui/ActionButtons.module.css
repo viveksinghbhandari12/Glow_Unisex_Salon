@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.compact {
+  gap: 0.5rem;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  min-height: 44px;
+}
+
+.whatsapp {
+  background-color: var(--color-terracotta);
+  color: #FFFFFF;
+  border: 1px solid var(--color-terracotta);
+  box-shadow: 0 2px 6px rgba(186, 104, 74, 0.2);
+}
+
+.whatsapp:hover {
+  background-color: var(--color-terracotta-dark);
+  border-color: var(--color-terracotta-dark);
+  color: #FFFFFF;
+}
+
+.call {
+  background-color: var(--color-sand-surface);
+  color: var(--color-espresso-dark);
+  border: 1px solid var(--border-warm);
+}
+
+.call:hover {
+  background-color: #FFFFFF;
+  border-color: var(--color-espresso-dark);
+  color: var(--color-espresso-dark);
+}
+
+.map {
+  background-color: transparent;
+  color: var(--color-taupe-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.map:hover {
+  background-color: var(--color-sand-surface);
+  color: var(--color-espresso-dark);
+  border-color: var(--border-warm);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

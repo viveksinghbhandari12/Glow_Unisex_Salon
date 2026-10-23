@@ -1,0 +1,82 @@
+.section {
+  padding-block: 5rem 6.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 3.5rem 2.5rem;
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background-color: var(--color-terracotta-soft);
+  color: var(--color-terracotta);
+  border: 1px solid rgba(186, 104, 74, 0.2);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  color: var(--color-espresso-dark);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.routeBadge {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--color-espresso-dark);
+  background-color: var(--color-sand-surface);
+  border: 1px solid var(--border-warm);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.35rem;
+}
+
+.description {
+  color: var(--color-taupe-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.confirmationBox {
+  background-color: var(--color-sand-surface);
+  border: 1px dashed var(--border-warm);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: var(--color-taupe-muted);
+  text-align: left;
+}
+
+.confirmationTitle {
+  font-weight: 700;
+  color: var(--color-espresso-dark);
+  margin-bottom: 0.45rem;
+  font-size: 0.9rem;
+}
+
+.actionsWrapper {
+  display: flex;
+  justify-content: center;
+}

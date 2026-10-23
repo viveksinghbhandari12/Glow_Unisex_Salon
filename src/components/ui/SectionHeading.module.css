@@ -1,0 +1,59 @@
+.wrapper {
+  margin-bottom: 2.25rem;
+  max-width: 720px;
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.left {
+  margin-right: auto;
+  text-align: left;
+}
+
+.right {
+  margin-left: auto;
+  text-align: right;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  color: var(--color-terracotta);
+}
+
+.title {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-espresso-dark);
+}
+
+.titleDark {
+  color: #FFFFFF;
+}
+
+.titleLight {
+  color: var(--color-espresso-dark);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-taupe-muted);
+}
+
+.subtitleDark {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.subtitleLight {
+  color: var(--color-taupe-muted);
+}

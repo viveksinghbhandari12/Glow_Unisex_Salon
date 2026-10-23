@@ -1,0 +1,295 @@
+﻿.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(62, 0, 12, 0.1);
+  box-shadow: 0 18px 42px -12px rgba(62, 0, 12, 0.1);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.35s ease;
+  text-decoration: none;
+  color: inherit;
+  will-change: transform, box-shadow;
+  animation: cardFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cardFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Luxury Light Beam Sheen Effect */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 20%,
+    rgba(255, 236, 209, 0.35) 48%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 236, 209, 0.35) 52%,
+    transparent 80%
+  );
+  transform: translateX(-125%);
+  transition: transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.65;
+}
+
+.cardDark::after {
+  background: linear-gradient(
+    108deg,
+    transparent 20%,
+    rgba(255, 236, 209, 0.12) 48%,
+    rgba(255, 236, 209, 0.25) 50%,
+    rgba(255, 236, 209, 0.12) 52%,
+    transparent 80%
+  );
+  opacity: 0.4;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 0 28px 58px -12px rgba(62, 0, 12, 0.22),
+              0 10px 24px -8px rgba(62, 0, 12, 0.14);
+  border-color: rgba(62, 0, 12, 0.38);
+}
+
+.card:hover::after {
+  transform: translateX(125%);
+}
+
+/* Top Text Zone (Editorial Storytelling with Sand Canvas) */
+.topSection {
+  padding: 2rem 1.75rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(180deg, #FFFDF9 0%, #FFECD1 100%);
+  border-bottom: 1px solid rgba(62, 0, 12, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  position: relative;
+  z-index: 1;
+}
+
+.cardDark .topSection {
+  background: linear-gradient(180deg, #3E000C 0%, #250007 100%);
+  border-bottom: 1px solid rgba(255, 236, 209, 0.12);
+}
+
+.description {
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: rgba(62, 0, 12, 0.82);
+  max-width: 320px;
+  margin: 0;
+  transition: color 0.3s ease;
+  letter-spacing: -0.01em;
+}
+
+.cardDark .description {
+  color: rgba(255, 236, 209, 0.85);
+}
+
+.card:hover .description {
+  color: #3E000C;
+}
+
+.cardDark:hover .description {
+  color: #FFECD1;
+}
+
+/* Centered Horizontal Pill Mark in Chocolate */
+.separatorPill {
+  width: 26px;
+  height: 2px;
+  background-color: #3E000C;
+  border-radius: 2px;
+  margin-top: 1rem;
+  opacity: 0.85;
+  transition: width 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease,
+              opacity 0.3s ease;
+}
+
+.cardDark .separatorPill {
+  background-color: #FFECD1;
+}
+
+.card:hover .separatorPill {
+  width: 56px;
+  opacity: 1;
+  background-color: #3E000C;
+  box-shadow: 0 0 10px rgba(62, 0, 12, 0.4);
+}
+
+.cardDark:hover .separatorPill {
+  background-color: #FFECD1;
+  box-shadow: 0 0 10px rgba(255, 236, 209, 0.6);
+}
+
+/* Middle Image Zone */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.8;
+  overflow: hidden;
+  background-color: #3E000C;
+  z-index: 1;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1),
+              filter 0.5s ease;
+  will-change: transform;
+}
+
+.card:hover .image {
+  transform: scale(1.07);
+  filter: brightness(1.04) contrast(1.02);
+}
+
+/* Bottom Bar (Clean Sand/White Footer Strip) */
+.bottomBar {
+  padding: 1.25rem 1.6rem;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(62, 0, 12, 0.08);
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.cardDark .bottomBar {
+  background-color: #270007;
+  border-top: 1px solid rgba(255, 236, 209, 0.1);
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.categoryTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #3E000C;
+  opacity: 0.85;
+  transition: letter-spacing 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+}
+
+.cardDark .categoryTag {
+  color: #FFECD1;
+}
+
+.card:hover .categoryTag {
+  letter-spacing: 0.18em;
+  opacity: 1;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3E000C;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  transition: color 0.3s ease;
+}
+
+.cardDark .title {
+  color: #FFECD1;
+}
+
+.card:hover .title {
+  color: #3E000C;
+}
+
+/* Action Area with Smooth Sliding Arrow & Expanding Dots */
+.actionArea {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(62, 0, 12, 0.45);
+  transition: color 0.3s ease;
+}
+
+.cardDark .actionArea {
+  color: rgba(255, 236, 209, 0.6);
+}
+
+.dotsIcon {
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: inherit;
+  transition: letter-spacing 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              color 0.3s ease;
+}
+
+.actionArrow {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              color 0.3s ease;
+  will-change: transform;
+}
+
+.card:hover .actionArea {
+  color: #3E000C;
+}
+
+.cardDark:hover .actionArea {
+  color: #FFECD1;
+}
+
+.card:hover .dotsIcon {
+  letter-spacing: 4px;
+  color: #3E000C;
+}
+
+.cardDark:hover .dotsIcon {
+  color: #FFECD1;
+}
+
+.card:hover .actionArrow {
+  transform: translate(3px, -3px);
+  color: #3E000C;
+}
+
+.cardDark:hover .actionArrow {
+  color: #FFECD1;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after,
+  .image,
+  .separatorPill,
+  .actionArrow,
+  .dotsIcon {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
