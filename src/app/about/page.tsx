@@ -387,6 +387,136 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* 3.5 Botanical Artistry & Sunflower Inspiration */}
+      <section
+        style={{
+          backgroundColor: "#FFF6E8",
+          paddingBlock: "5.5rem",
+          borderTop: "1px solid rgba(62, 0, 12, 0.12)",
+          borderBottom: "1px solid rgba(62, 0, 12, 0.12)",
+        }}
+      >
+        <div className="container" style={{ maxWidth: "1060px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "3.5rem",
+              alignItems: "center",
+            }}
+          >
+            {/* Left: Artistic Sunflower Mosaic Frame */}
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div
+                style={{
+                  position: "relative",
+                  maxWidth: "430px",
+                  width: "100%",
+                  borderRadius: "24px",
+                  padding: "12px",
+                  backgroundColor: "#FFFFFF",
+                  border: "1px solid rgba(62, 0, 12, 0.12)",
+                  boxShadow: "0 18px 45px rgba(62, 0, 12, 0.08)",
+                }}
+              >
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: "735/601",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    backgroundColor: "#FFFDF9",
+                  }}
+                >
+                  <Image
+                    src="/images/sunflower-art.jpg"
+                    alt="Golden Sunflower Botanical Mosaic Art"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 430px"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "-12px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    backgroundColor: "#3E000C",
+                    color: "#FFECD1",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.14em",
+                    padding: "0.45rem 1.15rem",
+                    borderRadius: "9999px",
+                    whiteSpace: "nowrap",
+                    boxShadow: "0 6px 18px rgba(62, 0, 12, 0.25)",
+                    border: "1px solid rgba(255, 236, 209, 0.3)",
+                  }}
+                >
+                  ✦ Botanical Vitality ✦
+                </div>
+              </div>
+            </div>
+
+            {/* Right: The Narrative Prose */}
+            <div>
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.18em",
+                  color: "#3E000C",
+                  display: "block",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                BOTANICAL SPIRIT &amp; WARM RADIANCE
+              </span>
+
+              <h2
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(1.95rem, 3.4vw, 2.6rem)",
+                  color: "#3E000C",
+                  fontWeight: 700,
+                  lineHeight: 1.22,
+                  marginBottom: "1.25rem",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Rooted in Warmth, Natural Light &amp; Artistry
+              </h2>
+
+              <p
+                style={{
+                  fontSize: "1.02rem",
+                  lineHeight: 1.7,
+                  color: "rgba(62, 0, 12, 0.82)",
+                  marginBottom: "1.25rem",
+                }}
+              >
+                Just as sunflowers turn toward warm sunlight, our salon philosophy centers on revealing your inherent, natural luminescence. We treat every styling and derma appointment as personal craftsmanship—drawing from rich golden tones, organic nourishing extracts, and gentle European formulations.
+              </p>
+
+              <p
+                style={{
+                  fontSize: "0.95rem",
+                  lineHeight: 1.65,
+                  color: "rgba(62, 0, 12, 0.72)",
+                  margin: 0,
+                }}
+              >
+                From Casmara algae-peel infusions to golden body polishes and bond-fortifying toners, we bring warmth, vitality, and refined care to every visit at our Rajouri Garden sanctuary.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. Craft Collective / Senior Stylists Spotlight */}
       <section
         style={{

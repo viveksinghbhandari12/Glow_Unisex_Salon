@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, MapPin } from "lucide-react";
 import { businessConfig, navRoutes } from "@/data/business";
 import { Button } from "@/components/ui/Button";
 import styles from "./Navbar.module.css";
@@ -48,6 +48,18 @@ export const Navbar: React.FC = () => {
 
         {/* Action Button & Mobile Toggle */}
         <div className={styles.actions}>
+          <a
+            href={businessConfig.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.mapBtn}
+            aria-label="View salon on Google Maps"
+            title="Open salon in Google Maps"
+          >
+            <MapPin size={16} />
+            <span className={styles.mapBtnText}>Map</span>
+          </a>
+
           <Button
             href={businessConfig.whatsappHref}
             isExternal
@@ -87,6 +99,17 @@ export const Navbar: React.FC = () => {
               </Link>
             );
           })}
+          <a
+            href={businessConfig.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+            className={styles.mobileNavLink}
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--color-terracotta)", fontWeight: 600 }}
+          >
+            <MapPin size={16} />
+            <span>Open in Google Maps ↗</span>
+          </a>
         </nav>
       )}
     </header>

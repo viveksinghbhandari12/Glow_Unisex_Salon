@@ -270,6 +270,7 @@ export default function ContactPage() {
                   alt="Visiting Card Front Design"
                   width={900}
                   height={500}
+                  unoptimized
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
               </div>
@@ -297,6 +298,7 @@ export default function ContactPage() {
                   alt="Visiting Card Back Design"
                   width={900}
                   height={500}
+                  unoptimized
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
               </div>

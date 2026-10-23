@@ -1,4 +1,4 @@
-﻿.card {
+.card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@
 
 /* Top Text Zone (Editorial Storytelling with Sand Canvas) */
 .topSection {
-  padding: 2rem 1.75rem 1.5rem;
+  padding: 1.5rem 1.4rem 1.15rem;
   text-align: center;
   background: linear-gradient(180deg, #FFFDF9 0%, #FFECD1 100%);
   border-bottom: 1px solid rgba(62, 0, 12, 0.08);
@@ -80,7 +80,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 170px;
+  min-height: 105px;
   position: relative;
   z-index: 1;
 }

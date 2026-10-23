@@ -686,41 +686,32 @@ export default function HomePage() {
 
             <p
               style={{
-                fontSize: "1.08rem",
-                lineHeight: 1.75,
-                color: "rgba(62, 0, 12, 0.82)",
-                marginBottom: "1.25rem",
-              }}
-            >
-              True personal styling is never generic; it is an intimate study of facial architecture, natural hair movement, and individual lifestyle. At Glow Unisex Salon, our Rajouri Garden atelier approaches every service with deliberate care—dispensing with rushed treatments in favor of thorough consultations, European scissor geometry, and clean formulations.
-            </p>
-
-            <p
-              style={{
-                fontSize: "0.98rem",
+                fontSize: "1.05rem",
                 lineHeight: 1.7,
-                color: "rgba(62, 0, 12, 0.72)",
-                margin: 0,
+                color: "rgba(62, 0, 12, 0.82)",
+                maxWidth: "680px",
+                marginInline: "auto",
+                marginBlock: "0",
               }}
             >
-              Whether custom-blending multidimensional balayage to flatter warm Indian undertones, sculpting face-framing curtain bangs that fall effortlessly into place, or preparing luminous bridal skin for landmark celebrations, our artisans curate every detail around your natural aura.
+              Bespoke consultations, European cutting architecture, and clean formulations tailored to your natural bone structure and personal aesthetic.
             </p>
           </div>
 
-          {/* Animated 3-Tier Service Cards Grid with Long Editorial Descriptions */}
+          {/* 3-Tier Service Cards Grid */}
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
               gap: "2.25rem",
-              marginBottom: "3.5rem",
+              marginBottom: "3rem",
             }}
           >
             {/* Card 1: Precision Cuts & Blowouts */}
             <ServiceCard
               category="Hair Styling & Architecture"
               title="Precision Cuts & Sculpted Blowouts"
-              description="Every haircut begins with a detailed bone structure and texture assessment, studying natural cowlicks and hair density. Our stylists employ wet-to-dry micro-sectioning to engineer fluid movement, frame your cheekbones, and deliver an effortless shape that holds its structural integrity long after you step outside the atelier."
+              description="Bespoke wet-to-dry micro-sectioning tailored to your bone structure, delivering fluid movement and lasting shape."
               image="/images/hair-cutting.jpg"
               priceNote="[Pricing on Consultation]"
               href="/hair"
@@ -731,7 +722,7 @@ export default function HomePage() {
             <ServiceCard
               category="Couture Colour & Toning"
               title="Hand-Painted Balayage & French Gloss"
-              description="A bespoke freehand illumination technique crafted for sun-drenched, multidimensional radiance with an imperceptible grow-out. Infused with bond-fortifying peptides and custom-toned gloss glazes, each ribbon of caramel, honey, and amber is hand-painted to harmonize with your natural skin undertones."
+              description="Seamless hand-painted highlights and bond-fortifying gloss glazes customized to harmonize with your natural skin undertones."
               image="/images/hair-detail.jpg"
               priceNote="[Pricing on Consultation]"
               href="/hair"
@@ -742,7 +733,7 @@ export default function HomePage() {
             <ServiceCard
               category="Haute Bridal & Derma Care"
               title="HD Couture Bridal & Dermal Renewal"
-              description="A sensory ritual designed for milestone bridal moments and high-definition photography. Beginning with gentle enzyme resurfacing and clinical hydra-infusion, we prep the canvas before layering micro-fine airbrush pigments that resist Delhi heat and humidity while remaining breathable and featherlight."
+              description="Dermal hydra-infusion and featherlight 18-hour sweatproof airbrush pigments designed for high-definition photography."
               image="/images/facial-spa.jpg"
               priceNote="[Pricing on Consultation]"
               href="/skin-bridal"
@@ -755,7 +746,7 @@ export default function HomePage() {
             style={{
               maxWidth: "760px",
               marginInline: "auto",
-              padding: "1.75rem 2rem",
+              padding: "1.5rem 2rem",
               backgroundColor: "#FFFFFF",
               borderRadius: "14px",
               border: "1px solid rgba(62, 0, 12, 0.1)",
@@ -773,7 +764,7 @@ export default function HomePage() {
                 fontSize: "0.85rem",
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
-                marginBottom: "0.4rem",
+                marginBottom: "0.35rem",
               }}
             >
               <CheckCircle2 size={16} color="#3E000C" />
@@ -787,7 +778,7 @@ export default function HomePage() {
                 margin: 0,
               }}
             >
-              Every appointment in our Rajouri Garden sanctuary begins with an unhurried discussion with our senior stylists. We listen to your hair goals, examine texture health, and provide transparent guidance before shears or colour bowls touch your hair.
+              Every appointment in our Rajouri Garden sanctuary begins with an unhurried consultation to assess your hair and skin goals.
             </p>
           </div>
         </div>
@@ -813,21 +804,55 @@ export default function HomePage() {
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div
-                className="arch-frame"
                 style={{
-                  maxWidth: "300px",
+                  position: "relative",
+                  maxWidth: "310px",
                   width: "100%",
-                  border: "1px solid rgba(62, 0, 12, 0.3)",
+                  borderRadius: "22px",
+                  padding: "10px",
+                  backgroundColor: "#2B0008",
+                  border: "1.5px solid rgba(62, 0, 12, 0.25)",
+                  boxShadow: "0 20px 48px rgba(62, 0, 12, 0.18)",
                 }}
               >
-                <div className="arch-frame-inner" style={{ aspectRatio: "3/4" }}>
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: "576/1024",
+                    borderRadius: "14px",
+                    overflow: "hidden",
+                    backgroundColor: "#160004",
+                  }}
+                >
                   <Image
-                    src="/images/bridal-editorial.jpg"
-                    alt="Atelier Bridal Craft"
+                    src="/images/newspaper-collage.jpg"
+                    alt="Editorial Newsprint Collage & Atelier Aesthetic"
                     fill
-                    sizes="(max-width: 768px) 100vw, 300px"
+                    sizes="(max-width: 768px) 100vw, 310px"
                     style={{ objectFit: "cover" }}
                   />
+                </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "-12px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    backgroundColor: "#3E000C",
+                    color: "#FFECD1",
+                    fontSize: "0.7rem",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.14em",
+                    padding: "0.4rem 1.15rem",
+                    borderRadius: "9999px",
+                    whiteSpace: "nowrap",
+                    border: "1px solid rgba(255, 236, 209, 0.35)",
+                    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.25)",
+                  }}
+                >
+                  ✦ EDITORIAL GAZETTE ✦
                 </div>
               </div>
             </div>

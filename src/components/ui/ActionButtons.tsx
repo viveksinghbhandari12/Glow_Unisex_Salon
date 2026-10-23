@@ -5,6 +5,7 @@ import styles from "./ActionButtons.module.css";
 
 export interface ActionButtonsProps {
   layout?: "horizontal" | "vertical" | "compact";
+  theme?: "dark" | "light";
   showWhatsApp?: boolean;
   showCall?: boolean;
   showMap?: boolean;
@@ -13,12 +14,14 @@ export interface ActionButtonsProps {
 
 export const ActionButtons: React.FC<ActionButtonsProps> = ({
   layout = "horizontal",
+  theme = "dark",
   showWhatsApp = true,
   showCall = true,
   showMap = true,
   className = "",
 }) => {
-  const containerClass = `${styles.container} ${styles[layout] || ""} ${className}`.trim();
+  const themeClass = theme === "light" ? styles.themeLight : styles.themeDark;
+  const containerClass = `${styles.container} ${styles[layout] || ""} ${themeClass} ${className}`.trim();
 
   return (
     <div className={containerClass} role="group" aria-label="Quick Actions">
