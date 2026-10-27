@@ -20,6 +20,7 @@ import {
   Calendar,
   Share2,
 } from "lucide-react";
+import { VisitingCardShowcase } from "@/components/ui/VisitingCardShowcase";
 import styles from "./Contact.module.css";
 
 export const metadata: Metadata = {
@@ -257,63 +258,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className={styles.visitingCardsDisplay}>
-            {/* Front Card */}
-            <div className={styles.visitingCardWrapper}>
-              <div className={styles.visitingCardLabel}>
-                <span>FRONT FACING</span>
-                <span className={styles.subTag}>Gold-Sand Inlay on Deep Chocolate</span>
-              </div>
-              <div className={styles.cardFrame}>
-                <Image
-                  src="/images/visiting-card-front.svg"
-                  alt="Visiting Card Front Design"
-                  width={900}
-                  height={500}
-                  unoptimized
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
-              </div>
-              <div className={styles.cardDownloadRow}>
-                <a
-                  href="/images/visiting-card-front.svg"
-                  download="Glow-Unisex-Salon-Visiting-Card-Front.svg"
-                  className={styles.cardDownloadBtn}
-                >
-                  <Download size={14} />
-                  <span>Download Front SVG</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Back Card */}
-            <div className={styles.visitingCardWrapper}>
-              <div className={styles.visitingCardLabel}>
-                <span>BACK FACING</span>
-                <span className={styles.subTag}>Direct WhatsApp QR &amp; Coordinates</span>
-              </div>
-              <div className={styles.cardFrame}>
-                <Image
-                  src="/images/visiting-card-back.svg"
-                  alt="Visiting Card Back Design"
-                  width={900}
-                  height={500}
-                  unoptimized
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
-              </div>
-              <div className={styles.cardDownloadRow}>
-                <a
-                  href="/images/visiting-card-back.svg"
-                  download="Glow-Unisex-Salon-Visiting-Card-Back.svg"
-                  className={styles.cardDownloadBtn}
-                >
-                  <Download size={14} />
-                  <span>Download Back SVG</span>
-                </a>
-              </div>
-            </div>
-          </div>
+          <VisitingCardShowcase />
         </div>
       </section>
 

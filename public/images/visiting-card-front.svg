@@ -1,108 +1,259 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
   <defs>
-    <!-- Rich Multi-Stop Chocolate Gradient -->
+    <!-- Rich Multi-Stop Couture Chocolate Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4C0212" />
-      <stop offset="45%" stop-color="#3E000C" />
-      <stop offset="100%" stop-color="#210006" />
+      <stop offset="0%" stop-color="#2D0008" />
+      <stop offset="35%" stop-color="#3E000C" />
+      <stop offset="70%" stop-color="#260007" />
+      <stop offset="100%" stop-color="#140003" />
     </linearGradient>
 
-    <!-- Metallic Gold Foil Gradient -->
-    <linearGradient id="goldFoil" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFF5E5" />
-      <stop offset="25%" stop-color="#FFECD1" />
-      <stop offset="50%" stop-color="#D9A866" />
-      <stop offset="75%" stop-color="#FFF0D9" />
-      <stop offset="100%" stop-color="#B8863D" />
+    <!-- Ultra-Luxe Champagne Gold Foil Gradient -->
+    <linearGradient id="goldFoil" x1="0%" y1="0%" x2="100%" y2="85%">
+      <stop offset="0%" stop-color="#FFF8EE" />
+      <stop offset="18%" stop-color="#FCEFD5" />
+      <stop offset="38%" stop-color="#DFB36E" />
+      <stop offset="55%" stop-color="#FFF0D4" />
+      <stop offset="72%" stop-color="#C59345" />
+      <stop offset="88%" stop-color="#E8C385" />
+      <stop offset="100%" stop-color="#9C6B23" />
     </linearGradient>
 
-    <!-- Subtle Radial Glow in Center -->
-    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFECD1" stop-opacity="0.14" />
-      <stop offset="60%" stop-color="#FFECD1" stop-opacity="0.04" />
-      <stop offset="100%" stop-color="#FFECD1" stop-opacity="0" />
+    <!-- Softer Secondary Gold for Fine Hairlines -->
+    <linearGradient id="goldHairline" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEFD5" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#DFB36E" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#B8863D" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Center Ambient Radiance Glow -->
+    <radialGradient id="ambientGlow" cx="50%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#FFE7C2" stop-opacity="0.14" />
+      <stop offset="35%" stop-color="#E2B472" stop-opacity="0.06" />
+      <stop offset="70%" stop-color="#3E000C" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#3E000C" stop-opacity="0" />
     </radialGradient>
 
-    <filter id="goldDrop" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.5" />
+    <!-- Subtle Vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.45" />
+    </radialGradient>
+
+    <!-- Micro-Emboss Drop Shadow Filter -->
+    <filter id="goldDrop" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.65" />
+      <feDropShadow dx="0" dy="1" stdDeviation="0.8" flood-color="#FFEED4" flood-opacity="0.25" />
     </filter>
 
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Guilloche Security Pattern -->
+    <pattern id="guillochePattern" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="28" fill="none" stroke="#DFB36E" stroke-width="0.35" stroke-opacity="0.07" />
+      <circle cx="30" cy="30" r="18" fill="none" stroke="#DFB36E" stroke-width="0.3" stroke-opacity="0.05" />
+      <path d="M 0 30 Q 30 0 60 30 T 120 30" fill="none" stroke="#DFB36E" stroke-width="0.35" stroke-opacity="0.06" />
+      <path d="M 30 0 Q 60 30 30 60 T 30 120" fill="none" stroke="#DFB36E" stroke-width="0.35" stroke-opacity="0.06" />
+    </pattern>
+
     <style>
-      .monogram { font-family: "Georgia", "Playfair Display", "Times New Roman", serif; font-size: 66px; font-weight: 700; fill: url(#goldFoil); letter-spacing: 7px; text-anchor: middle; filter: url(#goldDrop); }
-      .brand-title { font-family: "Georgia", "Playfair Display", "Times New Roman", serif; font-size: 42px; font-weight: 700; fill: url(#goldFoil); letter-spacing: 5px; text-anchor: middle; text-transform: uppercase; filter: url(#goldDrop); }
-      .brand-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12.5px; font-weight: 700; fill: #FFECD1; opacity: 0.95; letter-spacing: 5.5px; text-transform: uppercase; text-anchor: middle; }
-      .brand-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #FFECD1; opacity: 0.8; letter-spacing: 3.5px; text-transform: uppercase; text-anchor: middle; }
-      .tagline { font-family: "Georgia", serif; font-style: italic; font-size: 16px; fill: #FFECD1; opacity: 0.9; text-anchor: middle; }
-      .border-line { fill: none; stroke: url(#goldFoil); stroke-width: 1.75; opacity: 0.75; }
-      .border-inner { fill: none; stroke: #FFECD1; stroke-width: 0.75; opacity: 0.35; stroke-dasharray: 5, 3; }
-      .corner-flourish { fill: url(#goldFoil); }
+      .monogram {
+        font-family: "Playfair Display", "Didot", "Bodoni MT", "Cinzel", "Georgia", serif;
+        font-size: 58px;
+        font-weight: 700;
+        fill: url(#goldFoil);
+        letter-spacing: 5px;
+        text-anchor: middle;
+        filter: url(#goldDrop);
+      }
+      .brand-title {
+        font-family: "Playfair Display", "Didot", "Bodoni MT", "Cinzel", "Georgia", serif;
+        font-size: 40px;
+        font-weight: 700;
+        fill: url(#goldFoil);
+        letter-spacing: 6.5px;
+        text-anchor: middle;
+        text-transform: uppercase;
+        filter: url(#goldDrop);
+      }
+      .brand-sub {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+        font-size: 11.5px;
+        font-weight: 700;
+        fill: #FFECD1;
+        opacity: 0.95;
+        letter-spacing: 4.8px;
+        text-transform: uppercase;
+        text-anchor: middle;
+      }
+      .brand-desc {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+        font-size: 10.5px;
+        font-weight: 600;
+        fill: #E8C385;
+        opacity: 0.88;
+        letter-spacing: 3.8px;
+        text-transform: uppercase;
+        text-anchor: middle;
+      }
+      .tagline {
+        font-family: "Playfair Display", "Georgia", "Baskerville", serif;
+        font-style: italic;
+        font-size: 15.5px;
+        fill: #FFF5E5;
+        opacity: 0.92;
+        letter-spacing: 1px;
+        text-anchor: middle;
+      }
+      .border-line {
+        fill: none;
+        stroke: url(#goldFoil);
+        stroke-width: 1.5;
+        opacity: 0.82;
+      }
+      .border-inner {
+        fill: none;
+        stroke: #FFECD1;
+        stroke-width: 0.65;
+        opacity: 0.38;
+        stroke-dasharray: 4, 3;
+      }
+      .corner-flourish {
+        fill: url(#goldFoil);
+      }
     </style>
   </defs>
 
-  <!-- Background Base -->
+  <!-- Background Base Layers -->
   <rect width="900" height="500" fill="url(#bgGrad)" />
+  <rect width="900" height="500" fill="url(#guillochePattern)" />
+  <circle cx="450" cy="240" r="420" fill="url(#ambientGlow)" />
+  <rect width="900" height="500" fill="url(#vignette)" />
 
-  <!-- Center Ambient Radiance -->
-  <circle cx="450" cy="250" r="380" fill="url(#centerGlow)" />
+  <!-- Dual Outer Frame with Gilded Chamfer & Curve -->
+  <rect x="24" y="24" width="852" height="452" rx="10" class="border-line" />
+  <rect x="36" y="36" width="828" height="428" rx="6" class="border-inner" />
 
-  <!-- Dual Outer Frame -->
-  <rect x="28" y="28" width="844" height="444" rx="8" class="border-line" />
-  <rect x="40" y="40" width="820" height="420" rx="5" class="border-inner" />
-
-  <!-- Ornate Corner Motifs -->
+  <!-- Ornate Neoclassical Corner Motifs -->
   <g class="corner-flourish">
-    <!-- Top-Left -->
-    <path d="M 40 40 L 46 34 L 52 40 L 46 46 Z" />
-    <path d="M 40 40 L 40 68 M 40 40 L 68 40" stroke="url(#goldFoil)" stroke-width="1.5" fill="none" opacity="0.8" />
-    <circle cx="68" cy="40" r="2" />
-    <circle cx="40" cy="68" r="2" />
+    <!-- Top-Left Corner -->
+    <g transform="translate(36, 36)">
+      <path d="M 0 0 L 7 -4 L 14 0 L 7 4 Z" fill="url(#goldFoil)" />
+      <path d="M 0 0 L 0 34 M 0 0 L 34 0" stroke="url(#goldFoil)" stroke-width="1.25" fill="none" opacity="0.8" />
+      <path d="M 6 6 L 6 22 M 6 6 L 22 6" stroke="url(#goldFoil)" stroke-width="0.75" fill="none" opacity="0.5" />
+      <circle cx="34" cy="0" r="2.2" />
+      <circle cx="0" cy="34" r="2.2" />
+      <!-- Botanical Scroll Accent -->
+      <path d="M 12 12 Q 18 6 24 12 Q 18 18 12 12 Z" opacity="0.6" />
+    </g>
 
-    <!-- Top-Right -->
-    <path d="M 860 40 L 854 34 L 848 40 L 854 46 Z" />
-    <path d="M 860 40 L 860 68 M 860 40 L 832 40" stroke="url(#goldFoil)" stroke-width="1.5" fill="none" opacity="0.8" />
-    <circle cx="832" cy="40" r="2" />
-    <circle cx="860" cy="68" r="2" />
+    <!-- Top-Right Corner -->
+    <g transform="translate(864, 36) scale(-1, 1)">
+      <path d="M 0 0 L 7 -4 L 14 0 L 7 4 Z" fill="url(#goldFoil)" />
+      <path d="M 0 0 L 0 34 M 0 0 L 34 0" stroke="url(#goldFoil)" stroke-width="1.25" fill="none" opacity="0.8" />
+      <path d="M 6 6 L 6 22 M 6 6 L 22 6" stroke="url(#goldFoil)" stroke-width="0.75" fill="none" opacity="0.5" />
+      <circle cx="34" cy="0" r="2.2" />
+      <circle cx="0" cy="34" r="2.2" />
+      <path d="M 12 12 Q 18 6 24 12 Q 18 18 12 12 Z" opacity="0.6" />
+    </g>
 
-    <!-- Bottom-Left -->
-    <path d="M 40 460 L 46 454 L 52 460 L 46 466 Z" />
-    <path d="M 40 460 L 40 432 M 40 460 L 68 460" stroke="url(#goldFoil)" stroke-width="1.5" fill="none" opacity="0.8" />
-    <circle cx="68" cy="460" r="2" />
-    <circle cx="40" cy="432" r="2" />
+    <!-- Bottom-Left Corner -->
+    <g transform="translate(36, 464) scale(1, -1)">
+      <path d="M 0 0 L 7 -4 L 14 0 L 7 4 Z" fill="url(#goldFoil)" />
+      <path d="M 0 0 L 0 34 M 0 0 L 34 0" stroke="url(#goldFoil)" stroke-width="1.25" fill="none" opacity="0.8" />
+      <path d="M 6 6 L 6 22 M 6 6 L 22 6" stroke="url(#goldFoil)" stroke-width="0.75" fill="none" opacity="0.5" />
+      <circle cx="34" cy="0" r="2.2" />
+      <circle cx="0" cy="34" r="2.2" />
+      <path d="M 12 12 Q 18 6 24 12 Q 18 18 12 12 Z" opacity="0.6" />
+    </g>
 
-    <!-- Bottom-Right -->
-    <path d="M 860 460 L 854 454 L 848 460 L 854 466 Z" />
-    <path d="M 860 460 L 860 432 M 860 460 L 832 460" stroke="url(#goldFoil)" stroke-width="1.5" fill="none" opacity="0.8" />
-    <circle cx="832" cy="460" r="2" />
-    <circle cx="860" cy="432" r="2" />
+    <!-- Bottom-Right Corner -->
+    <g transform="translate(864, 464) scale(-1, -1)">
+      <path d="M 0 0 L 7 -4 L 14 0 L 7 4 Z" fill="url(#goldFoil)" />
+      <path d="M 0 0 L 0 34 M 0 0 L 34 0" stroke="url(#goldFoil)" stroke-width="1.25" fill="none" opacity="0.8" />
+      <path d="M 6 6 L 6 22 M 6 6 L 22 6" stroke="url(#goldFoil)" stroke-width="0.75" fill="none" opacity="0.5" />
+      <circle cx="34" cy="0" r="2.2" />
+      <circle cx="0" cy="34" r="2.2" />
+      <path d="M 12 12 Q 18 6 24 12 Q 18 18 12 12 Z" opacity="0.6" />
+    </g>
   </g>
 
-  <!-- Central Monogram Medallion -->
-  <g transform="translate(450, 162)">
-    <!-- Guilloche radiating ticks -->
-    <circle cx="0" cy="0" r="64" fill="none" stroke="url(#goldFoil)" stroke-width="0.8" opacity="0.3" stroke-dasharray="2, 4" />
-    <circle cx="0" cy="0" r="56" fill="none" stroke="url(#goldFoil)" stroke-width="2" opacity="0.85" />
-    <circle cx="0" cy="0" r="49" fill="#250007" stroke="url(#goldFoil)" stroke-width="0.75" opacity="0.95" />
+  <!-- Central Luxury Crest & Monogram Medallion -->
+  <g transform="translate(450, 150)">
+    <!-- Outer Delicate Radial Starburst Rays -->
+    <g opacity="0.32" stroke="url(#goldHairline)" stroke-width="0.75">
+      <line x1="0" y1="-68" x2="0" y2="-62" />
+      <line x1="26" y1="-63" x2="23" y2="-58" />
+      <line x1="48" y1="-48" x2="44" y2="-44" />
+      <line x1="63" y1="-26" x2="58" y2="-23" />
+      <line x1="68" y1="0" x2="62" y2="0" />
+      <line x1="63" y1="26" x2="58" y2="23" />
+      <line x1="48" y1="48" x2="44" y2="44" />
+      <line x1="26" y1="63" x2="23" y2="58" />
+      <line x1="0" y1="68" x2="0" y2="62" />
+      <line x1="-26" y1="63" x2="-23" y2="58" />
+      <line x1="-48" y1="48" x2="-44" y2="44" />
+      <line x1="-63" y1="26" x2="-58" y2="23" />
+      <line x1="-68" y1="0" x2="-62" y2="0" />
+      <line x1="-63" y1="-26" x2="-58" y2="-23" />
+      <line x1="-48" y1="-48" x2="-44" y2="-44" />
+      <line x1="-26" y1="-63" x2="-23" y2="-58" />
+    </g>
 
-    <!-- Crown Star Accent -->
-    <path d="M 0 -38 L 4 -29 L 13 -29 L 6 -23 L 9 -14 L 0 -20 L -9 -14 L -6 -23 L -13 -29 L -4 -29 Z" fill="url(#goldFoil)" opacity="0.9" transform="scale(0.6)" />
+    <!-- Concentric Rings with Gold Foil Stroke -->
+    <circle cx="0" cy="0" r="59" fill="none" stroke="url(#goldHairline)" stroke-width="0.8" opacity="0.45" stroke-dasharray="2, 3" />
+    <circle cx="0" cy="0" r="52" fill="none" stroke="url(#goldFoil)" stroke-width="2" opacity="0.9" />
+    <circle cx="0" cy="0" r="46" fill="#1C0005" stroke="url(#goldFoil)" stroke-width="0.8" opacity="0.95" />
 
-    <!-- Monogram Letters -->
-    <text x="0" y="23" class="monogram">GUS</text>
+    <!-- Imperial Salon Tiara / Crown Accent atop Medallion -->
+    <g transform="translate(0, -52)">
+      <!-- Central Gem & Star -->
+      <path d="M 0 -8 L 2.5 -2.5 L 8 0 L 2.5 2.5 L 0 8 L -2.5 2.5 L -8 0 L -2.5 -2.5 Z" fill="url(#goldFoil)" />
+      <!-- Tiara Peaks -->
+      <path d="M -16 6 L -10 -2 L -5 3 L 0 -5 L 5 3 L 10 -2 L 16 6 Z" fill="url(#goldFoil)" opacity="0.9" />
+      <!-- Delicate Laurel Filigree -->
+      <path d="M -22 8 Q -12 2 -4 5 M 22 8 Q 12 2 4 5" stroke="url(#goldFoil)" stroke-width="1.2" fill="none" opacity="0.85" />
+    </g>
+
+    <!-- Monogram Typography: GUS -->
+    <text x="0" y="21" class="monogram">GUS</text>
+
+    <!-- Sub-Medallion Accent Diamond -->
+    <polygon points="0,58 3.5,62 0,66 -3.5,62" fill="url(#goldFoil)" opacity="0.85" />
   </g>
 
-  <!-- Brand Typography -->
-  <text x="450" y="286" class="brand-title">Glow Unisex Salon</text>
-  
-  <!-- Separator Bar with Diamond Center -->
-  <g transform="translate(450, 310)">
-    <line x1="-140" y1="0" x2="-24" y2="0" stroke="url(#goldFoil)" stroke-width="1.2" opacity="0.7" />
-    <polygon points="0,-5 6,0 0,5 -6,0" fill="url(#goldFoil)" />
-    <circle cx="-14" cy="0" r="1.75" fill="url(#goldFoil)" opacity="0.85" />
-    <circle cx="14" cy="0" r="1.75" fill="url(#goldFoil)" opacity="0.85" />
-    <line x1="24" y1="0" x2="140" y2="0" stroke="url(#goldFoil)" stroke-width="1.2" opacity="0.7" />
+  <!-- Primary Salon Typography -->
+  <text x="450" y="278" class="brand-title">Glow Unisex Salon</text>
+
+  <!-- Ornate Centerpiece Separator Bar -->
+  <g transform="translate(450, 303)">
+    <line x1="-190" y1="0" x2="-28" y2="0" stroke="url(#goldFoil)" stroke-width="1.25" opacity="0.75" />
+    <!-- Flanking Laurel Leaf Accents -->
+    <path d="M -24 -3 Q -17 0 -24 3 Q -20 0 -24 -3 Z" fill="url(#goldFoil)" opacity="0.8" />
+    <circle cx="-14" cy="0" r="1.8" fill="url(#goldFoil)" opacity="0.9" />
+    <!-- Center Faceted Star Diamond -->
+    <polygon points="0,-7 5,-2 7,0 5,2 0,7 -5,2 -7,0 -5,-2" fill="url(#goldFoil)" filter="url(#goldDrop)" />
+    <circle cx="0" cy="0" r="1.4" fill="#1C0005" />
+    <circle cx="14" cy="0" r="1.8" fill="url(#goldFoil)" opacity="0.9" />
+    <path d="M 24 -3 Q 17 0 24 3 Q 20 0 24 -3 Z" fill="url(#goldFoil)" opacity="0.8" />
+    <line x1="28" y1="0" x2="190" y2="0" stroke="url(#goldFoil)" stroke-width="1.25" opacity="0.75" />
   </g>
 
-  <text x="450" y="342" class="brand-sub">HAUTE COIFFURE &bull; BALAYAGE &bull; BRIDAL ARTISTRY</text>
-  <text x="450" y="375" class="tagline">&ldquo;Where Craft Meets Care&rdquo;</text>
-  <text x="450" y="418" class="brand-desc">FLAGSHIP ATELIER &bull; Rajouri Garden, New Delhi</text>
+  <!-- Haute Descriptor Sub-headline -->
+  <text x="450" y="336" class="brand-sub">HAUTE COIFFURE • COUTURE BALAYAGE • BRIDAL ATELIER</text>
+
+  <!-- Brand Signature Tagline -->
+  <text x="450" y="372" class="tagline">“Where Craft Meets Care”</text>
+
+  <!-- Delicate Footer Hairline Separator -->
+  <g transform="translate(450, 396)">
+    <line x1="-110" y1="0" x2="110" y2="0" stroke="url(#goldHairline)" stroke-width="0.7" opacity="0.4" />
+    <circle cx="0" cy="0" r="1.5" fill="url(#goldFoil)" opacity="0.6" />
+  </g>
+
+  <!-- Atelier Location Coordinates -->
+  <text x="450" y="424" class="brand-desc">FLAGSHIP ATELIER • RAJOURI GARDEN, NEW DELHI</text>
 </svg>

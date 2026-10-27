@@ -47,7 +47,7 @@ export interface BusinessConfig {
 
 export const businessConfig: BusinessConfig = {
   name: "Glow Unisex Salon",
-  shortName: "GUS",
+  shortName: "GUUS",
   tagline: "[PENDING CONFIRMATION: Premium Hair, Skin & Bridal Styling]",
   address: {
     street: "[ADD STREET ADDRESS - PENDING CONFIRMATION]",
@@ -58,11 +58,11 @@ export const businessConfig: BusinessConfig = {
     country: "India",
     formattedAddress: "Rajouri Garden, New Delhi, Delhi, India [FULL ADDRESS PENDING CONFIRMATION]",
   },
-  phone: "[ADD PHONE - PENDING CONFIRMATION]",
-  phoneCallHref: "tel:+910000000000",
-  whatsapp: "[ADD WHATSAPP NUMBER - PENDING CONFIRMATION]",
+  phone: "+91 9266619594",
+  phoneCallHref: "tel:+91 9843274523",
+  whatsapp: "+91 9266619594",
   whatsappHref: "https://wa.me/?text=Hello%20Glow%20Unisex%20Salon",
-  email: "[ADD EMAIL - PENDING CONFIRMATION]",
+  email: "Glow&Shine@gmail.com",
   openingHours: {
     days: "Monday – Sunday",
     hours: "[ADD TIMINGS - PENDING CONFIRMATION: e.g. 10:00 AM - 8:30 PM]",

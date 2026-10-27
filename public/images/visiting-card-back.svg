@@ -1,129 +1,348 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
   <defs>
-    <!-- Sand & Cream Gradient -->
+    <!-- Warm Sand & Silk Ivory Multi-Stop Gradient -->
     <linearGradient id="sandBg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFDF9" />
-      <stop offset="50%" stop-color="#FFF4E6" />
-      <stop offset="100%" stop-color="#FFECD1" />
+      <stop offset="35%" stop-color="#FFF9EE" />
+      <stop offset="70%" stop-color="#FFF3E0" />
+      <stop offset="100%" stop-color="#FCEFD5" />
     </linearGradient>
 
+    <!-- Metallic Gold Foil Gradient for Back Card Accents -->
+    <linearGradient id="goldBack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C385" />
+      <stop offset="50%" stop-color="#B8863D" />
+      <stop offset="100%" stop-color="#8C5C1B" />
+    </linearGradient>
+
+    <!-- Subtle Vignette / Edge Shadow -->
+    <radialGradient id="sandVignette" cx="50%" cy="50%" r="70%">
+      <stop offset="65%" stop-color="#3E000C" stop-opacity="0" />
+      <stop offset="100%" stop-color="#3E000C" stop-opacity="0.06" />
+    </radialGradient>
+
+    <!-- Guilloche Security Pattern for Back Card -->
+    <pattern id="guillocheBack" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="28" fill="none" stroke="#3E000C" stroke-width="0.3" stroke-opacity="0.035" />
+      <circle cx="30" cy="30" r="16" fill="none" stroke="#3E000C" stroke-width="0.25" stroke-opacity="0.025" />
+      <path d="M 0 30 Q 30 0 60 30 T 120 30" fill="none" stroke="#3E000C" stroke-width="0.25" stroke-opacity="0.03" />
+    </pattern>
+
+    <!-- Card Soft Elevation Filter -->
+    <filter id="qrCardShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#3E000C" flood-opacity="0.10" />
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#3E000C" flood-opacity="0.06" />
+    </filter>
+
     <style>
-      .brand-title-back { font-family: "Georgia", "Playfair Display", serif; font-size: 27px; font-weight: 700; fill: #3E000C; letter-spacing: 2.8px; text-transform: uppercase; }
-      .brand-sub-back { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; font-weight: 700; fill: #3E000C; opacity: 0.8; letter-spacing: 3.2px; text-transform: uppercase; }
-      .field-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 9.5px; font-weight: 700; fill: #3E000C; opacity: 0.58; letter-spacing: 2px; text-transform: uppercase; }
-      .field-value { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14.5px; font-weight: 600; fill: #3E000C; }
-      .border-outer-back { fill: none; stroke: #3E000C; stroke-width: 1.5; opacity: 0.35; }
-      .border-inner-back { fill: none; stroke: #3E000C; stroke-width: 0.75; opacity: 0.18; stroke-dasharray: 4, 3; }
-      .qr-card-box { fill: #FFFFFF; stroke: #3E000C; stroke-width: 1.2; }
-      .qr-pixel-dark { fill: #3E000C; }
+      .brand-title-back {
+        font-family: "Playfair Display", "Didot", "Bodoni MT", "Cinzel", "Georgia", serif;
+        font-size: 25px;
+        font-weight: 700;
+        fill: #3E000C;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+      }
+      .brand-sub-back {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 9.5px;
+        font-weight: 700;
+        fill: #3E000C;
+        opacity: 0.78;
+        letter-spacing: 2.8px;
+        text-transform: uppercase;
+      }
+      .field-label {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        fill: #3E000C;
+        opacity: 0.6;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+      }
+      .field-value {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 13.5px;
+        font-weight: 600;
+        fill: #3E000C;
+        letter-spacing: 0.2px;
+      }
+      .field-value-serif {
+        font-family: "Playfair Display", "Georgia", serif;
+        font-size: 14.5px;
+        font-weight: 600;
+        fill: #3E000C;
+      }
+      .border-outer-back {
+        fill: none;
+        stroke: url(#goldBack);
+        stroke-width: 1.5;
+        opacity: 0.65;
+      }
+      .border-inner-back {
+        fill: none;
+        stroke: #3E000C;
+        stroke-width: 0.65;
+        opacity: 0.22;
+        stroke-dasharray: 4, 3;
+      }
+      .icon-bg {
+        fill: #FFFDF9;
+        stroke: url(#goldBack);
+        stroke-width: 1;
+      }
+      .icon-stroke {
+        stroke: #3E000C;
+        fill: none;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
     </style>
   </defs>
 
-  <!-- Background Base -->
+  <!-- Background Base Layers -->
   <rect width="900" height="500" fill="url(#sandBg)" />
+  <rect width="900" height="500" fill="url(#guillocheBack)" />
+  <rect width="900" height="500" fill="url(#sandVignette)" />
 
   <!-- Double Hairline Framing -->
-  <rect x="28" y="28" width="844" height="444" rx="8" class="border-outer-back" />
-  <rect x="38" y="38" width="824" height="424" rx="5" class="border-inner-back" />
+  <rect x="24" y="24" width="852" height="452" rx="10" class="border-outer-back" />
+  <rect x="36" y="36" width="828" height="428" rx="6" class="border-inner-back" />
 
-  <!-- Left Column: Atelier Details -->
-  <g transform="translate(68, 70)">
-    <!-- Brand Header -->
-    <text x="0" y="0" class="brand-title-back">Glow Unisex Salon</text>
-    <text x="0" y="21" class="brand-sub-back">HAUTE COIFFURE &bull; BALAYAGE &bull; SENSORY DERMA</text>
-    <line x1="0" y1="36" x2="470" y2="36" stroke="#3E000C" stroke-width="1.2" opacity="0.2" />
+  <!-- Subtle Corner Motifs -->
+  <g fill="url(#goldBack)" opacity="0.75">
+    <!-- Top-Left -->
+    <polygon points="36,36 43,32 50,36 43,40" />
+    <circle cx="56" cy="36" r="1.5" />
+    <circle cx="36" cy="56" r="1.5" />
+    <!-- Top-Right -->
+    <polygon points="864,36 857,32 850,36 857,40" />
+    <circle cx="844" cy="36" r="1.5" />
+    <circle cx="864" cy="56" r="1.5" />
+    <!-- Bottom-Left -->
+    <polygon points="36,464 43,460 50,464 43,468" />
+    <circle cx="56" cy="464" r="1.5" />
+    <circle cx="36" cy="444" r="1.5" />
+    <!-- Bottom-Right -->
+    <polygon points="864,464 857,460 850,464 857,468" />
+    <circle cx="844" cy="464" r="1.5" />
+    <circle cx="864" cy="444" r="1.5" />
+  </g>
 
-    <!-- 1. Direct Telephones -->
-    <g transform="translate(0, 68)">
-      <circle cx="8" cy="-3" r="14" fill="#3E000C" opacity="0.08" />
-      <text x="0" y="-12" class="field-label">DIRECT TELEPHONE</text>
-      <text x="0" y="8" class="field-value">+919876543210</text>
-
-      <text x="245" y="-12" class="field-label">WHATSAPP CONCIERGE</text>
-      <text x="245" y="8" class="field-value">+919876543210</text>
+  <!-- Left Column: Atelier Coordinates -->
+  <g transform="translate(64, 62)">
+    <!-- Header: Salon Monogram Pill & Title -->
+    <g>
+      <!-- Mini Monogram Badge -->
+      <g transform="translate(18, 14)">
+        <circle cx="0" cy="0" r="16" fill="#3E000C" />
+        <circle cx="0" cy="0" r="14" fill="none" stroke="url(#goldBack)" stroke-width="0.8" />
+        <text x="0" y="4" font-family="'Playfair Display', Georgia, serif" font-size="10px" font-weight="700" fill="#FFECD1" text-anchor="middle" letter-spacing="1px">GUS</text>
+      </g>
+      <!-- Title & Descriptor -->
+      <g transform="translate(46, 0)">
+        <text x="0" y="14" class="brand-title-back">GLOW UNISEX SALON</text>
+        <text x="0" y="32" class="brand-sub-back">HAUTE COIFFURE • BALAYAGE • SENSORY DERMA</text>
+      </g>
     </g>
 
-    <!-- 2. Address & Locality -->
-    <g transform="translate(0, 142)">
-      <text x="0" y="-12" class="field-label">ATELIER LOCATION</text>
-      <text x="0" y="8" class="field-value">Main Market, Block J, Rajouri Garden</text>
-      <text x="0" y="28" class="field-value" font-size="13px" opacity="0.85">Rajouri Garden, New Delhi, Delhi 110027</text>
+    <!-- Header Divider Line -->
+    <g transform="translate(0, 48)">
+      <line x1="0" y1="0" x2="480" y2="0" stroke="url(#goldBack)" stroke-width="1" opacity="0.45" />
+      <polygon points="240,-3 243,0 240,3 237,0" fill="url(#goldBack)" opacity="0.8" />
     </g>
 
-    <!-- 3. Timings & Appointments -->
-    <g transform="translate(0, 226)">
-      <text x="0" y="-12" class="field-label">OPERATING SCHEDULE</text>
-      <text x="0" y="8" class="field-value">10:00 AM – 8:30 PM (Open 7 Days a Week)</text>
+    <!-- 1. Reservations & Telephones -->
+    <g transform="translate(0, 78)">
+      <!-- Icon Badge: Phone -->
+      <g transform="translate(14, 12)">
+        <circle cx="0" cy="0" r="13" class="icon-bg" />
+        <!-- Phone SVG Path -->
+        <path d="M -4 -6 C -5 -6 -6 -5 -6 -4 C -6 1 0 7 5 7 C 6 7 7 6 7 5 L 5.5 3 C 5 2.5 4.5 2.5 4 3 L 3.5 3.5 C 2.5 3 1.5 2 1 1 L 1.5 0.5 C 2 0 2 -0.5 1.5 -1 L -0.5 -2.5 C -1 -3 -1.5 -3 -2 -2.5 Z" class="icon-stroke" stroke-width="1.2" transform="scale(0.9)" />
+      </g>
+      <g transform="translate(38, 6)">
+        <text x="0" y="0" class="field-label">DIRECT RESERVATIONS</text>
+        <text x="0" y="17" class="field-value">+91 98765 43210</text>
+      </g>
+
+      <!-- Icon Badge: WhatsApp -->
+      <g transform="translate(258, 12)">
+        <circle cx="0" cy="0" r="13" class="icon-bg" />
+        <!-- Chat Bubble SVG Path -->
+        <path d="M -5 -3 C -5 -5 -3 -6 0 -6 C 3 -6 5 -5 5 -3 C 5 0 3 2 0 2 L -2 3.5 L -1.8 1.5 C -3.8 1.2 -5 -1 -5 -3 Z" class="icon-stroke" stroke-width="1.2" transform="scale(1.1)" />
+      </g>
+      <g transform="translate(282, 6)">
+        <text x="0" y="0" class="field-label">WHATSAPP CONCIERGE</text>
+        <text x="0" y="17" class="field-value">+91 98765 43210</text>
+      </g>
     </g>
 
-    <!-- 4. Digital Portfolio & Consultation Protocol -->
-    <g transform="translate(0, 292)">
-      <text x="0" y="-12" class="field-label">ONLINE PORTFOLIO</text>
-      <text x="0" y="8" class="field-value" font-weight="700">glowsalon.in</text>
-      <text x="245" y="-12" class="field-label">APPOINTMENT PROTOCOL</text>
-      <text x="245" y="8" class="field-value" font-size="12px" opacity="0.85">Prior Reservation Recommended</text>
+    <!-- 2. Flagship Atelier Location -->
+    <g transform="translate(0, 150)">
+      <!-- Icon Badge: Location Pin -->
+      <g transform="translate(14, 14)">
+        <circle cx="0" cy="0" r="13" class="icon-bg" />
+        <!-- Pin SVG Path -->
+        <path d="M 0 -6 C -3.2 -6 -5 -3.8 -5 -1 C -5 2.5 0 6 0 6 C 0 6 5 2.5 5 -1 C 5 -3.8 3.2 -6 0 -6 Z" class="icon-stroke" stroke-width="1.2" transform="scale(1.1)" />
+        <circle cx="0" cy="-1" r="1.3" fill="#3E000C" />
+      </g>
+      <g transform="translate(38, 6)">
+        <text x="0" y="0" class="field-label">FLAGSHIP ATELIER LOCATION</text>
+        <text x="0" y="17" class="field-value">Main Market, Block J, Rajouri Garden</text>
+        <text x="0" y="34" class="field-value" font-size="12px" opacity="0.8">Rajouri Garden, New Delhi, Delhi 110027</text>
+      </g>
+    </g>
+
+    <!-- 3. Operating Schedule & Protocol -->
+    <g transform="translate(0, 230)">
+      <!-- Icon Badge: Clock -->
+      <g transform="translate(14, 12)">
+        <circle cx="0" cy="0" r="13" class="icon-bg" />
+        <!-- Clock SVG Path -->
+        <circle cx="0" cy="0" r="5.5" class="icon-stroke" stroke-width="1.2" />
+        <path d="M 0 -3.5 L 0 0 L 2.5 1.5" class="icon-stroke" stroke-width="1.2" />
+      </g>
+      <g transform="translate(38, 6)">
+        <text x="0" y="0" class="field-label">OPERATING SCHEDULE</text>
+        <text x="0" y="17" class="field-value">10:00 AM – 8:30 PM • Open 7 Days a Week</text>
+        <text x="0" y="34" class="field-value" font-size="11.5px" opacity="0.75">Mon – Sun: Prior Reservation Recommended</text>
+      </g>
+    </g>
+
+    <!-- 4. Digital Portfolio & Social Presence -->
+    <g transform="translate(0, 310)">
+      <!-- Icon Badge: Globe -->
+      <g transform="translate(14, 12)">
+        <circle cx="0" cy="0" r="13" class="icon-bg" />
+        <!-- Globe SVG Path -->
+        <circle cx="0" cy="0" r="5.5" class="icon-stroke" stroke-width="1.2" />
+        <ellipse cx="0" cy="0" rx="2.5" ry="5.5" class="icon-stroke" stroke-width="1.1" />
+        <line x1="-5.5" y1="0" x2="5.5" y2="0" class="icon-stroke" stroke-width="1.1" />
+      </g>
+      <g transform="translate(38, 6)">
+        <text x="0" y="0" class="field-label">ONLINE PORTFOLIO</text>
+        <text x="0" y="17" class="field-value" font-weight="700">glowunisexsalon.com</text>
+      </g>
+
+      <!-- Icon Badge: Instagram Camera -->
+      <g transform="translate(258, 12)">
+        <circle cx="0" cy="0" r="13" class="icon-bg" />
+        <!-- Camera SVG Path -->
+        <rect x="-4.5" y="-4.5" width="9" height="9" rx="2.5" class="icon-stroke" stroke-width="1.2" />
+        <circle cx="0" cy="0" r="2" class="icon-stroke" stroke-width="1.1" />
+        <circle cx="2.2" cy="-2.2" r="0.6" fill="#3E000C" />
+      </g>
+      <g transform="translate(282, 6)">
+        <text x="0" y="0" class="field-label">INSTAGRAM LOOKBOOK</text>
+        <text x="0" y="17" class="field-value">@glowunisexsalon</text>
+      </g>
     </g>
   </g>
 
-  <!-- Vertical Divider with Center Diamond -->
-  <g transform="translate(590, 250)">
-    <line x1="0" y1="-185" x2="0" y2="-15" stroke="#3E000C" stroke-width="1.2" opacity="0.2" />
-    <polygon points="0,-8 5,0 0,8 -5,0" fill="#3E000C" opacity="0.45" />
-    <line x1="0" y1="15" x2="0" y2="185" stroke="#3E000C" stroke-width="1.2" opacity="0.2" />
+  <!-- Vertical Divider with Neoclassical Medallion -->
+  <g transform="translate(585, 250)">
+    <line x1="0" y1="-185" x2="0" y2="-16" stroke="url(#goldBack)" stroke-width="1.2" opacity="0.4" />
+    <!-- Center Diamond Medallion -->
+    <polygon points="0,-9 5.5,0 0,9 -5.5,0" fill="url(#goldBack)" opacity="0.85" />
+    <circle cx="0" cy="0" r="1.8" fill="#FFFDF9" />
+    <line x1="0" y1="16" x2="0" y2="185" stroke="url(#goldBack)" stroke-width="1.2" opacity="0.4" />
   </g>
 
-  <!-- Right Column: Scan to Connect (High-Fidelity Stylized QR Card) -->
-  <g transform="translate(635, 110)">
-    <!-- QR Card Container -->
-    <rect x="0" y="0" width="206" height="206" rx="16" class="qr-card-box" filter="drop-shadow(0 8px 16px rgba(62,0,12,0.08))" />
+  <!-- Right Column: Elevated QR Concierge Card Box -->
+  <g transform="translate(625, 75)">
+    <!-- White Paper Elevation Card -->
+    <rect x="0" y="0" width="220" height="350" rx="14" fill="#FFFFFF" stroke="url(#goldBack)" stroke-width="1" filter="url(#qrCardShadow)" />
 
-    <!-- Precision Corner Brackets -->
-    <path d="M 14 26 L 14 14 L 26 14" fill="none" stroke="#3E000C" stroke-width="1.75" />
-    <path d="M 192 26 L 192 14 L 180 14" fill="none" stroke="#3E000C" stroke-width="1.75" />
-    <path d="M 14 180 L 14 192 L 26 192" fill="none" stroke="#3E000C" stroke-width="1.75" />
-    <path d="M 192 180 L 192 192 L 180 192" fill="none" stroke="#3E000C" stroke-width="1.75" />
+    <!-- Subtle Inner Border Frame -->
+    <rect x="7" y="7" width="206" height="336" rx="10" fill="none" stroke="#3E000C" stroke-width="0.5" opacity="0.12" />
 
-    <!-- Precision QR Elements -->
-    <!-- Top-Left Finder -->
-    <rect x="28" y="28" width="46" height="46" rx="4" class="qr-pixel-dark" />
-    <rect x="35" y="35" width="32" height="32" rx="2" fill="#FFFFFF" />
-    <rect x="42" y="42" width="18" height="18" rx="1" class="qr-pixel-dark" />
+    <!-- Top Label -->
+    <g transform="translate(110, 32)">
+      <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="10.5px" font-weight="700" fill="#3E000C" letter-spacing="2.4px" text-anchor="middle">INSTANT CONCIERGE</text>
+      <text x="0" y="14" font-family="-apple-system, sans-serif" font-size="8.5px" font-weight="500" fill="#3E000C" opacity="0.62" letter-spacing="1px" text-anchor="middle">SCAN WITH CAMERA</text>
+    </g>
 
-    <!-- Top-Right Finder -->
-    <rect x="132" y="28" width="46" height="46" rx="4" class="qr-pixel-dark" />
-    <rect x="139" y="35" width="32" height="32" rx="2" fill="#FFFFFF" />
-    <rect x="146" y="42" width="18" height="18" rx="1" class="qr-pixel-dark" />
+    <!-- Precision Corner Registration Brackets around QR Area -->
+    <g transform="translate(30, 68)" stroke="url(#goldBack)" stroke-width="1.5" fill="none">
+      <path d="M 0 10 L 0 0 L 10 0" />
+      <path d="M 160 10 L 160 0 L 150 0" />
+      <path d="M 0 150 L 0 160 L 10 160" />
+      <path d="M 160 150 L 160 160 L 150 160" />
+    </g>
 
-    <!-- Bottom-Left Finder -->
-    <rect x="28" y="132" width="46" height="46" rx="4" class="qr-pixel-dark" />
-    <rect x="35" y="139" width="32" height="32" rx="2" fill="#FFFFFF" />
-    <rect x="42" y="146" width="18" height="18" rx="1" class="qr-pixel-dark" />
+    <!-- High-Fidelity Stylized QR Code -->
+    <g transform="translate(35, 73)">
+      <!-- QR Background Base -->
+      <rect x="0" y="0" width="150" height="150" fill="#FFFFFF" rx="6" />
 
-    <!-- Data Blocks & Timing Patterns -->
-    <rect x="84" y="32" width="12" height="12" class="qr-pixel-dark" />
-    <rect x="106" y="32" width="16" height="8" class="qr-pixel-dark" />
-    <rect x="88" y="54" width="28" height="12" class="qr-pixel-dark" />
-    <rect x="34" y="84" width="18" height="10" class="qr-pixel-dark" />
-    <rect x="60" y="86" width="12" height="18" class="qr-pixel-dark" />
-    <rect x="82" y="82" width="16" height="24" class="qr-pixel-dark" />
-    <rect x="112" y="76" width="24" height="14" class="qr-pixel-dark" />
-    <rect x="146" y="84" width="22" height="12" class="qr-pixel-dark" />
-    <rect x="152" y="108" width="14" height="14" class="qr-pixel-dark" />
+      <!-- Top-Left Finder Eye -->
+      <rect x="6" y="6" width="38" height="38" rx="6" fill="#3E000C" />
+      <rect x="12" y="12" width="26" height="26" rx="3" fill="#FFFFFF" />
+      <rect x="18" y="18" width="14" height="14" rx="2" fill="#3E000C" />
 
-    <!-- Bottom Data Blocks -->
-    <rect x="84" y="138" width="22" height="14" class="qr-pixel-dark" />
-    <rect x="114" y="132" width="14" height="22" class="qr-pixel-dark" />
-    <rect x="138" y="140" width="32" height="12" class="qr-pixel-dark" />
-    <rect x="88" y="162" width="16" height="16" class="qr-pixel-dark" />
-    <rect x="118" y="166" width="26" height="12" class="qr-pixel-dark" />
-    <rect x="154" y="162" width="16" height="16" class="qr-pixel-dark" />
+      <!-- Top-Right Finder Eye -->
+      <rect x="106" y="6" width="38" height="38" rx="6" fill="#3E000C" />
+      <rect x="112" y="12" width="26" height="26" rx="3" fill="#FFFFFF" />
+      <rect x="118" y="18" width="14" height="14" rx="2" fill="#3E000C" />
 
-    <!-- Center Monogram Mini Badge -->
-    <circle cx="103" cy="103" r="17" fill="#FFFFFF" stroke="#3E000C" stroke-width="1.4" />
-    <text x="103" y="107" font-family="Georgia, serif" font-size="10.5px" font-weight="700" fill="#3E000C" text-anchor="middle">GUS</text>
+      <!-- Bottom-Left Finder Eye -->
+      <rect x="6" y="106" width="38" height="38" rx="6" fill="#3E000C" />
+      <rect x="12" y="112" width="26" height="26" rx="3" fill="#FFFFFF" />
+      <rect x="18" y="118" width="14" height="14" rx="2" fill="#3E000C" />
 
-    <!-- Scan Caption -->
-    <text x="103" y="240" font-family="-apple-system, sans-serif" font-size="11.5px" font-weight="700" fill="#3E000C" letter-spacing="2.2px" text-anchor="middle">SCAN TO CHAT</text>
-    <text x="103" y="258" font-family="-apple-system, sans-serif" font-size="9px" font-weight="500" fill="#3E000C" opacity="0.65" letter-spacing="1.2px" text-anchor="middle">INSTANT WHATSAPP RECEPTION</text>
+      <!-- Data Pixels & Patterns -->
+      <rect x="52" y="10" width="12" height="10" rx="1.5" fill="#3E000C" />
+      <rect x="70" y="8" width="14" height="8" rx="1.5" fill="#3E000C" />
+      <rect x="90" y="12" width="8" height="14" rx="1.5" fill="#3E000C" />
+
+      <rect x="52" y="28" width="24" height="10" rx="1.5" fill="#3E000C" />
+      <rect x="82" y="30" width="16" height="8" rx="1.5" fill="#3E000C" />
+
+      <rect x="10" y="52" width="14" height="10" rx="1.5" fill="#3E000C" />
+      <rect x="32" y="54" width="10" height="16" rx="1.5" fill="#3E000C" />
+      <rect x="50" y="48" width="12" height="20" rx="1.5" fill="#3E000C" />
+      <rect x="68" y="52" width="14" height="10" rx="1.5" fill="#3E000C" />
+      <rect x="88" y="46" width="20" height="12" rx="1.5" fill="#3E000C" />
+      <rect x="116" y="52" width="12" height="10" rx="1.5" fill="#3E000C" />
+      <rect x="134" y="54" width="8" height="14" rx="1.5" fill="#3E000C" />
+
+      <rect x="10" y="74" width="24" height="10" rx="1.5" fill="#3E000C" />
+      <rect x="42" y="76" width="14" height="12" rx="1.5" fill="#3E000C" />
+      <rect x="96" y="70" width="16" height="16" rx="1.5" fill="#3E000C" />
+      <rect x="120" y="74" width="20" height="10" rx="1.5" fill="#3E000C" />
+
+      <rect x="52" y="92" width="12" height="18" rx="1.5" fill="#3E000C" />
+      <rect x="72" y="90" width="16" height="10" rx="1.5" fill="#3E000C" />
+      <rect x="94" y="94" width="10" height="14" rx="1.5" fill="#3E000C" />
+      <rect x="112" y="92" width="28" height="10" rx="1.5" fill="#3E000C" />
+
+      <rect x="50" y="116" width="16" height="12" rx="1.5" fill="#3E000C" />
+      <rect x="74" y="112" width="14" height="22" rx="1.5" fill="#3E000C" />
+      <rect x="96" y="118" width="26" height="10" rx="1.5" fill="#3E000C" />
+      <rect x="130" y="114" width="12" height="16" rx="1.5" fill="#3E000C" />
+
+      <rect x="52" y="134" width="24" height="8" rx="1.5" fill="#3E000C" />
+      <rect x="94" y="134" width="14" height="8" rx="1.5" fill="#3E000C" />
+      <rect x="116" y="132" width="26" height="10" rx="1.5" fill="#3E000C" />
+
+      <!-- Center Luxury Monogram Seal -->
+      <circle cx="75" cy="75" r="16" fill="#FFFFFF" stroke="url(#goldBack)" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(62,0,12,0.15))" />
+      <circle cx="75" cy="75" r="13" fill="#3E000C" />
+      <text x="75" y="79" font-family="'Playfair Display', Georgia, serif" font-size="8.5px" font-weight="700" fill="#FFECD1" text-anchor="middle" letter-spacing="0.5px">GUS</text>
+    </g>
+
+    <!-- Scan Caption & Action Details -->
+    <g transform="translate(110, 258)">
+      <line x1="-60" y1="0" x2="60" y2="0" stroke="url(#goldBack)" stroke-width="0.75" opacity="0.4" />
+      <polygon points="0,-2.5 2.5,0 0,2.5 -2.5,0" fill="url(#goldBack)" opacity="0.7" />
+    </g>
+
+    <g transform="translate(110, 280)">
+      <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11.5px" font-weight="700" fill="#3E000C" letter-spacing="2px" text-anchor="middle">DIRECT WHATSAPP</text>
+      <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.2px" font-weight="500" fill="#3E000C" opacity="0.72" letter-spacing="0.6px" text-anchor="middle">Scan for instant salon concierge</text>
+      <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5px" font-weight="600" fill="#B8863D" letter-spacing="1px" text-anchor="middle">• BOOKINGS &amp; ENQUIRIES •</text>
+    </g>
   </g>
 </svg>

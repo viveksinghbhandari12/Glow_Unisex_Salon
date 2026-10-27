@@ -1,0 +1,413 @@
+/* ==========================================================================
+   VISITING CARD SHOWCASE — LUXURY EDITORIAL SPECIFICATION (90x50mm)
+   ========================================================================== */
+
+.showcaseContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  width: 100%;
+}
+
+/* 1. Mode Switcher (Side-by-Side vs 3D Flip) */
+.modeSwitcherWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.modeSwitcher {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(62, 0, 12, 0.04);
+  padding: 0.35rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(62, 0, 12, 0.12);
+  gap: 0.25rem;
+  box-shadow: inset 0 1px 3px rgba(62, 0, 12, 0.05);
+}
+
+.modeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #3E000C;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  user-select: none;
+}
+
+.modeBtn:hover:not(.modeBtnActive) {
+  background-color: rgba(62, 0, 12, 0.06);
+  color: #3E000C;
+}
+
+.modeBtnActive {
+  background: linear-gradient(135deg, #3E000C 0%, #250007 100%);
+  color: #FFECD1;
+  box-shadow: 0 4px 12px rgba(62, 0, 12, 0.25);
+}
+
+/* 2. Side-by-Side Dual Display */
+.dualCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 2.75rem;
+  align-items: start;
+}
+
+.cardItemWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card Header Label */
+.cardMetaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 0.25rem;
+}
+
+.cardBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3E000C;
+  background: linear-gradient(135deg, #FFFDF9 0%, #FFF5E6 100%);
+  border: 1px solid rgba(184, 134, 61, 0.35);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(62, 0, 12, 0.05);
+}
+
+.cardSubTag {
+  font-size: 0.75rem;
+  color: rgba(62, 0, 12, 0.65);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* 3. Luxury Card Frame with Gilded Edges */
+.cardOuterFrame {
+  position: relative;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 246, 230, 0.95) 0%,
+    rgba(223, 179, 110, 0.75) 30%,
+    rgba(156, 107, 35, 0.5) 60%,
+    rgba(255, 240, 212, 0.9) 100%
+  );
+  box-shadow: 
+    0 22px 50px -12px rgba(62, 0, 12, 0.30),
+    0 8px 20px -4px rgba(62, 0, 12, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: 
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  perspective: 1200px;
+}
+
+.cardOuterFrame:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 
+    0 34px 70px -15px rgba(62, 0, 12, 0.42),
+    0 16px 30px -6px rgba(62, 0, 12, 0.20),
+    0 0 0 1px rgba(223, 179, 110, 0.6);
+}
+
+.cardInnerCanvas {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1F0006;
+  aspect-ratio: 900 / 500;
+  display: block;
+}
+
+/* Satin Foil Shimmer Light Sweep */
+.cardInnerCanvas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 15%,
+    rgba(255, 245, 230, 0.15) 38%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 245, 230, 0.15) 62%,
+    transparent 85%
+  );
+  transform: translateX(-150%);
+  transition: transform 0.95s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cardOuterFrame:hover .cardInnerCanvas::after {
+  transform: translateX(150%);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 4. Action Row Below Card */
+.cardFooterActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-inline: 0.25rem;
+}
+
+.secondaryActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #3E000C;
+  background-color: rgba(62, 0, 12, 0.05);
+  border: 1px solid rgba(62, 0, 12, 0.12);
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.secondaryActionBtn:hover {
+  background-color: rgba(62, 0, 12, 0.10);
+  border-color: rgba(62, 0, 12, 0.25);
+  color: #250007;
+  transform: translateY(-1px);
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #3E000C;
+  background: linear-gradient(135deg, #FFF9EE 0%, #FFECD1 100%);
+  border: 1px solid rgba(184, 134, 61, 0.35);
+  padding: 0.45rem 0.95rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(62, 0, 12, 0.06);
+}
+
+.downloadBtn:hover {
+  background: linear-gradient(135deg, #3E000C 0%, #250007 100%);
+  color: #FFECD1;
+  border-color: #3E000C;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(62, 0, 12, 0.22);
+}
+
+/* 5. 3D Interactive Flip Card Stage */
+.flipStageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.flipHintBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3E000C;
+  background-color: rgba(62, 0, 12, 0.05);
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(62, 0, 12, 0.12);
+}
+
+.flipCardPerspective {
+  width: 100%;
+  perspective: 1600px;
+  cursor: pointer;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 900 / 500;
+  transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flipCardInnerFlipped {
+  transform: rotateY(180deg);
+}
+
+.flipFaceFront,
+.flipFaceBack {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 18px;
+}
+
+.flipFaceBack {
+  transform: rotateY(180deg);
+}
+
+.flipControlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.flipToggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.35rem;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #FFECD1;
+  background: linear-gradient(135deg, #3E000C 0%, #250007 100%);
+  border: 1px solid rgba(223, 179, 110, 0.4);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(62, 0, 12, 0.25);
+}
+
+.flipToggleBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(62, 0, 12, 0.35);
+  background: linear-gradient(135deg, #4A000F 0%, #2F0009 100%);
+}
+
+/* 6. Luxury Print Specifications Ribbon */
+.specsRibbon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding: 1.5rem 1.75rem;
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  border: 1px solid rgba(62, 0, 12, 0.10);
+  box-shadow: 0 4px 16px rgba(62, 0, 12, 0.04);
+}
+
+.specItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.specIcon {
+  color: #B8863D;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.specContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.specTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #3E000C;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.specDetail {
+  font-size: 0.78rem;
+  color: rgba(62, 0, 12, 0.65);
+  line-height: 1.4;
+}
+
+/* 7. Mobile Responsive Refinements */
+@media (max-width: 768px) {
+  .dualCardsGrid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .cardOuterFrame {
+    border-radius: 14px;
+  }
+
+  .cardInnerCanvas {
+    border-radius: 12px;
+  }
+
+  .specsRibbon {
+    grid-template-columns: 1fr 1fr;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .cardFooterActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .secondaryActionBtn,
+  .downloadBtn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .specsRibbon {
+    grid-template-columns: 1fr;
+  }
+
+  .modeSwitcher {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .modeBtn {
+    flex: 1;
+    justify-content: center;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.76rem;
+  }
+}
