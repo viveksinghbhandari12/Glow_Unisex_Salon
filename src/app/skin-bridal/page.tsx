@@ -421,6 +421,7 @@ export default function SkinBridalPage() {
                   {category.items.map((item) => (
                     <article
                       key={item.name}
+                      className="service-menu-card"
                       style={{
                         backgroundColor: "#FFFFFF",
                         border: "1px solid var(--border-warm)",

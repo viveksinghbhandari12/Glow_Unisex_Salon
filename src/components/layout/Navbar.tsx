@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, MessageCircle, MapPin, Phone } from "lucide-react";
@@ -10,13 +10,23 @@ import styles from "./Navbar.module.css";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ""}`}>
       <div className={`container ${styles.navContainer}`}>
         {/* Brand Wordmark / Initial */}
         <Link href="/" className={styles.brand} onClick={closeMenu} aria-label="Glow Unisex Salon Home">
@@ -75,7 +85,7 @@ export const Navbar: React.FC = () => {
 
           <button
             type="button"
-            className={styles.mobileMenuBtn}
+            className={`${styles.mobileMenuBtn} ${isOpen ? styles.mobileMenuBtnOpen : ""}`}
             onClick={toggleMenu}
             aria-expanded={isOpen}
             aria-label={isOpen ? "Close menu" : "Open menu"}

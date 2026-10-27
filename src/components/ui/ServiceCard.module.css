@@ -60,10 +60,11 @@
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.012);
-  box-shadow: 0 28px 58px -12px rgba(62, 0, 12, 0.22),
-              0 10px 24px -8px rgba(62, 0, 12, 0.14);
-  border-color: rgba(62, 0, 12, 0.38);
+  transform: translateY(-10px) scale(1.016);
+  box-shadow: 0 32px 68px -12px rgba(62, 0, 12, 0.25),
+              0 14px 28px -6px rgba(62, 0, 12, 0.14),
+              0 0 0 1px rgba(184, 134, 61, 0.45);
+  border-color: rgba(62, 0, 12, 0.35);
 }
 
 .card:hover::after {
@@ -131,15 +132,16 @@
 }
 
 .card:hover .separatorPill {
-  width: 56px;
+  width: 64px;
   opacity: 1;
-  background-color: #3E000C;
-  box-shadow: 0 0 10px rgba(62, 0, 12, 0.4);
+  background-color: #B8863D;
+  box-shadow: 0 0 12px rgba(184, 134, 61, 0.5);
 }
 
 .cardDark:hover .separatorPill {
+  width: 64px;
   background-color: #FFECD1;
-  box-shadow: 0 0 10px rgba(255, 236, 209, 0.6);
+  box-shadow: 0 0 12px rgba(255, 236, 209, 0.65);
 }
 
 /* Middle Image Zone */
@@ -272,12 +274,13 @@
 }
 
 .card:hover .actionArrow {
-  transform: translate(3px, -3px);
-  color: #3E000C;
+  transform: translate(4px, -4px) scale(1.1);
+  color: #B8863D;
 }
 
 .cardDark:hover .actionArrow {
-  color: #FFECD1;
+  transform: translate(4px, -4px) scale(1.1);
+  color: #E8C385;
 }
 
 /* Accessibility */

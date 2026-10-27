@@ -915,6 +915,7 @@ export default function HomePage() {
             }}
           >
             <div
+              className="review-card"
               style={{
                 backgroundColor: "#FFFFFF",
                 border: "1px solid rgba(62, 0, 12, 0.1)",
@@ -943,6 +944,7 @@ export default function HomePage() {
             </div>
 
             <div
+              className="review-card"
               style={{
                 backgroundColor: "#FFFFFF",
                 border: "1px solid rgba(62, 0, 12, 0.1)",
@@ -971,6 +973,7 @@ export default function HomePage() {
             </div>
 
             <div
+              className="review-card"
               style={{
                 backgroundColor: "#FFFFFF",
                 border: "1px solid rgba(62, 0, 12, 0.1)",

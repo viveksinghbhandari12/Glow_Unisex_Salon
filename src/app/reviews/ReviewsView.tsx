@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -528,6 +528,7 @@ export const ReviewsView: React.FC = () => {
             {filteredReviews.map((rev) => (
               <article
                 key={rev.id}
+                className="review-card"
                 style={{
                   backgroundColor: "#FFFFFF",
                   border: "1px solid rgba(42, 33, 24, 0.08)",

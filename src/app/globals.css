@@ -318,3 +318,93 @@ img, svg {
     font-size: clamp(1.65rem, 6.8vw, 2.15rem) !important;
   }
 }
+
+/* ==========================================================================
+   Luxury Card Animations & Hover Interactions
+   ========================================================================== */
+
+/* 1. Service Menu Cards (Hair & Skin-Bridal Services) */
+.service-menu-card {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+  animation: cardEnter 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.service-menu-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 15%,
+    rgba(255, 236, 209, 0.3) 48%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 236, 209, 0.3) 52%,
+    transparent 85%
+  );
+  transform: translateX(-150%);
+  transition: transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 5;
+  border-radius: inherit;
+}
+
+.service-menu-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 22px 50px -12px rgba(62, 0, 12, 0.18),
+              0 8px 20px -4px rgba(62, 0, 12, 0.08),
+              0 0 0 1px rgba(184, 134, 61, 0.35) !important;
+  border-color: rgba(62, 0, 12, 0.32) !important;
+}
+
+.service-menu-card:hover::after {
+  transform: translateX(150%);
+}
+
+.service-menu-card a[href*="wa.me"] {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.service-menu-card:hover a[href*="wa.me"] {
+  color: var(--color-chocolate) !important;
+}
+
+.service-menu-card a[href*="wa.me"] svg {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-menu-card:hover a[href*="wa.me"] svg {
+  transform: translateX(4px);
+}
+
+/* 2. Review / Testimonial Cards */
+.review-card {
+  position: relative;
+  transition: transform 0.38s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.38s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.3s ease;
+  will-change: transform, box-shadow;
+  animation: cardEnter 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.review-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 42px -10px rgba(62, 0, 12, 0.16),
+              0 0 0 1px rgba(184, 134, 61, 0.3) !important;
+  border-color: rgba(62, 0, 12, 0.28) !important;
+}
+
+/* 3. Subtle Entrance Keyframes */
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
