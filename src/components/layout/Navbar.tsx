@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
           </div>
           <div className={styles.brandText}>
             <span className={styles.brandName}>{businessConfig.name}</span>
-            <span className={styles.brandSub}>Rajouri Garden</span>
+
           </div>
         </Link>
 
@@ -109,9 +109,8 @@ export const Navbar: React.FC = () => {
                     key={route.href}
                     href={route.href}
                     onClick={closeMenu}
-                    className={`${styles.mobileNavLink} ${
-                      isActive ? styles.mobileNavLinkActive : ""
-                    }`}
+                    className={`${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ""
+                      }`}
                     aria-current={isActive ? "page" : undefined}
                   >
                     <div className={styles.mobileNavLeft}>
